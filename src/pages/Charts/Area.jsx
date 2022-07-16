@@ -1,8 +1,30 @@
 import React from 'react'
+import {ChartComponent,SeriesCollectionDirective,SeriesDirective,Inject,Legend,DateTime,SplineAreaSeries} from '@syncfusion/ej2-react-charts';
+import { lineChartData, areaCustomSeries,areaPrimaryXAxis ,areaPrimaryYAxis } from '../../data/dummy';
+import { useStateContext } from '../../contexts/ContextProvider';
+import { Header } from '../../components';
+
 
 const Area = () => {
+  const { currentColor, currentMode } = useStateContext();
   return (
-    <div>Area</div>
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <Header category="Charts" title="Area Chart" />
+    <ChartComponent
+      id="areaChart"
+      height='420px'
+      primaryXAxis={areaPrimaryXAxis}
+      primaryYAxis={areaPrimaryYAxis}
+      tooltip={{enable:true}}
+      background={currentMode === 'Dark' ? '#33373e' : '#fff'}
+    >
+      <Inject services={[Legend,DateTime,SplineAreaSeries]}/>
+      <SeriesCollectionDirective>
+        {areaCustomSeries.map((item, index) => <SeriesDirective key={index} {...item}/>)}
+        
+      </SeriesCollectionDirective>
+    </ChartComponent>
+    </div>
   )
 }
 

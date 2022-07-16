@@ -8,7 +8,7 @@ import {links} from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 const Sidebar = () => { 
   
-  const {activeMenu,setactiveMenu,screenSize} = useStateContext();
+  const {activeMenu,setactiveMenu,screenSize,currentColor} = useStateContext();
 
 
   const handleCloseSidebar = ()=>{ 
@@ -41,6 +41,7 @@ const Sidebar = () => {
                   to={`/${item.name}`}
                   key={item.name}
                   onClick= {handleCloseSidebar}
+                  style={({isActive})=>({backgroundColor:isActive?currentColor : ""})}  // The navlink is react companent which when destructed gives us isActive prop which we can use to highlt the current color
                   className={({isActive})=>(isActive ? activeLink : normalLink)}
                 >
                   {item.icon}

@@ -7,16 +7,16 @@ import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Ecommerce, E
 import { useStateContext } from './contexts/ContextProvider'
 import './App.css'
 const App = () => {
-    const {activeMenu} = useStateContext();
+    const {activeMenu, themeSettings,setThemeSettings,currentColor,currentMode} = useStateContext();
 
   return (
-    <div>
+    <div className={currentMode==='Dark'?'dark':''}>
         <BrowserRouter>
             <div className='flex relative dark:bg-main-dark-bg'>
                 <div className='fixed right-4 bottom-4' style={{zIndex:'1000'}}>
                     <TooltipComponent content="Settings" position="top">
                        {/* //The only reason we have not enterd color blue in class name because we will have to dynamically change them  */}
-                        <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white ' style={{background:'blue',borderRadius:'50%'}}>
+                        <button type='button' onClick={()=>{setThemeSettings(true)}} className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white ' style={{background:currentColor,borderRadius:'50%'}}>
                             <FiSettings/>
                         </button>
 
@@ -31,13 +31,14 @@ const App = () => {
                 <Sidebar/>
             </div>
             )}
-            <div className= {`dark:bg-main-bg bg-main-bg min-h-screen ${activeMenu ? 'md:ml-72 w-full' :'  w-full flex-2'}`}>
+            <div className= {`dark:bg-main-dark-bg bg-main-bg min-h-screen ${activeMenu ? 'md:ml-72 w-full ' :'  w-full flex-2'}`}>
                 <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                     <Navbar/>
 
                 </div>
             
                 <div>
+                { themeSettings && <ThemeSettings/>}
                     <Routes>
                         {/* DashBoard */}
                         <Route path="/" element={<Ecommerce/>}/>
@@ -48,7 +49,7 @@ const App = () => {
                         <Route path='/customers' element={<Customers/>}/>
 
                         {/* Apps */}
-                        <Route path='/kanabn' element={<Kanban/>}/>
+                        <Route path='/kanban' element={<Kanban/>}/>
                         <Route path='/editor' element={<Editor/>}/>
                         <Route path='/calendar' element={<Calendar/>}/>
                         <Route path='/color-picker' element={<ColorPicker/>}/>
@@ -59,7 +60,7 @@ const App = () => {
                         <Route path='/area' element={<Area/>}/> 
                         <Route path='/pie' element={<Pie/>}/>   
                         <Route path='/financial' element={<Financial/>}/>     
-                        <Route path='/colour-mapping' element={<ColorMapping/>}/>
+                        <Route path='/color-mapping' element={<ColorMapping/>}/>
                         <Route path='/pyramid' element={<Pyramid/>}/>
                         <Route path='/stacked' element={<Stacked/>}/>
 
