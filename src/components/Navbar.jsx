@@ -31,7 +31,7 @@ const Navbar = () => {
 
       handleSize();
       return ()=>{window.removeEventListener('resize',handleSize)}
-    }, []);
+    });
 
     useEffect(() => {
       if(screenSize<=900){
@@ -72,6 +72,7 @@ const Navbar = () => {
               <img
                 src={avatar}
                 className="rounded-full w-8 h-8"
+                alt='avatar'
               ></img>
               <p>
                 <span className="text-gray-400 text-14">Hi,</span> {' '}
