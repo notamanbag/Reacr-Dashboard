@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChartsHeader, Stacked as StackedChart,Header } from '../../components';
+import {  Stacked as StackedChart,Header } from '../../components';
 
 const Stacked = () => {
   return (

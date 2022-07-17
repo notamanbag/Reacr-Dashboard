@@ -1,5 +1,5 @@
 import React from 'react'
-import { GridComponent, ColumnsDirective, ColumnDirective,Selection, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject,Search,Toolbar } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective,Selection, Sort,  Filter, Page,  Edit, Inject,Search,Toolbar } from '@syncfusion/ej2-react-grids';
 import { customersData, customersGrid } from '../data/dummy';
 import { Header } from '../components';
 

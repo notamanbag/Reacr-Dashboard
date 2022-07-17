@@ -1,7 +1,7 @@
 import React from 'react'
-import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject,Search,Toolbar } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective,   Page,  Inject,Search,Toolbar } from '@syncfusion/ej2-react-grids';
 
-import { employeesData, contextMenuItems, employeesGrid } from '../data/dummy';
+import { employeesData,  employeesGrid } from '../data/dummy';
 
 import Header from '../components/Header'
 const Employees = () => {

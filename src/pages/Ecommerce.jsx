@@ -1,14 +1,14 @@
 import React from 'react'
 import { BsCurrencyDollar } from 'react-icons/bs'
 import {GoPrimitiveDot} from 'react-icons/go';
-import { Button, Pie, SparkLine, Stacked } from '../components';
+import { Button, Stacked } from '../components';
 import Spark from '../components/Charts/Spark';
 import { useStateContext } from '../contexts/ContextProvider';
-import { earningData, ecomPieChartData, SparklineAreaData } from '../data/dummy';
+import { earningData,  SparklineAreaData } from '../data/dummy';
 
 
 const Ecommerce = () => {
-  const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
+  const {  currentColor  } = useStateContext();
   return (
     <div className='mt-24'>
     <div className="flex flex-wrap lg:flex-nowrap justify-center ">
