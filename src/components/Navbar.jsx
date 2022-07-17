@@ -22,7 +22,7 @@ const NavButton = ({title,cutomFunction,icon,color,dotColor}) =>(
   </TooltipComponent>
 )
 const Navbar = () => {
-    const {activeMenu,setactiveMenu,isClicked,setisClicked,handleClick,screenSize, setscreenSize,currentColor} = useStateContext();
+    const {setactiveMenu,isClicked,handleClick,screenSize, setscreenSize,currentColor} = useStateContext();
     console.log(currentColor)
     useEffect(() => {
       const handleSize = ()=>(setscreenSize(window.innerWidth))

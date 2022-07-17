@@ -1,7 +1,6 @@
-import { Agenda, Day, DragAndDrop, Inject, Month, ScheduleComponent, ViewsDirective, Week, WorkWeek ,Resize} from '@syncfusion/ej2-react-schedule'
+import { Agenda, Day, DragAndDrop, Inject, Month, ScheduleComponent,  Week, WorkWeek ,Resize} from '@syncfusion/ej2-react-schedule'
 import React from 'react'
 
-import {DatePickerComponent} from '@syncfusion/ej2-react-calendars'
 
 import {scheduleData } from '../data/dummy'
 

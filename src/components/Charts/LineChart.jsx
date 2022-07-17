@@ -1,11 +1,11 @@
 import React from 'react'
 import {ChartComponent,SeriesCollectionDirective,SeriesDirective,Inject,Legend,DateTime,Tooltip, LineSeries} from '@syncfusion/ej2-react-charts';
-import { lineChartData, lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '../../data/dummy';
+import {  lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
 
 
 const LineChart = () => {
-  const { currentColor, currentMode } = useStateContext();
+  const {  currentMode } = useStateContext();
   return (
    
     <ChartComponent
